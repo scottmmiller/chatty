@@ -1,6 +1,6 @@
 <!doctype html>
 <html>
-  <head>
+  <head ng-controller='MainCtrl' >
     <meta charset="utf-8">
     <title></title>
     <meta name="description" content="">
@@ -10,8 +10,10 @@
   </head>
   <body ng-app="chattyApp">
 
+    <div ng-repeat='message in messages'></div>
+
     <!-- Add your site or application content here -->
-    <div class="container" ng-include="'views/main.html'" ng-controller="MainCtrl"></div>
+    <div class="container" ng-include="'views/main.html'" ng-controller="MessageCtrl"></div>
     
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" ></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.js"></script>

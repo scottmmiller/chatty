@@ -46,7 +46,7 @@ In the future with Express, this will be much easier. But for now, here are the 
 ********************************************************8
 
 ###Step 3: Finish the Angular client
-To run your client side-by-side with your server, consider running the npm module `http-server`in the same directory. Whatever port it uses is what you'll be putting in your browser to test (e.g. localhost:8080). Remember, your API is running on a separate process on a separate port. This means that you'll have two seaprate "domains" you'll be hosting content from, a domain for your Node app (which responds to GET and POST) and `http-server` serving just static files (index.html, css, etc).
+To run your client side-by-side with your server, consider running the npm module `http-server`in the same directory. Whatever port it uses is what you'll be putting in your browser to test (e.g. localhost:8080). Remember, your API is running on a separate process on a separate port. This means that you'll have two separate "domains" you'll be hosting content from, a domain for your Node app (which responds to GET and POST) and `http-server` serving just static files (index.html, css, etc).
 
 * The MessageCtrl is already provided, as is the MessageService
 * Connect the MessageCtrl to the main.html view as an ng-controller
@@ -60,6 +60,8 @@ MessageService.getMessages().then(function(response) {
 ```
 
 * Use the ng-repeat directive to create div elements for every message so that you can display the messages from the server
+
+***************************************************8
 
 ###Step 4: User input
 * Create a text input field and attach an ng-model to it.
