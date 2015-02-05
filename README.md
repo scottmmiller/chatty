@@ -16,6 +16,8 @@ Since we aren't worried about persistently storing information in a chat server 
   * Dont forget to set the appropriate headers for `Content-type`
 * To test your server, run it (`node server.js`) and use cURL or Postman to make a GET request to your server. Try putting in some pre-filled messages into your array to make sure it's returning data the way you expect.
 
+**************************************************8
+
 ###Step 2: Create the POST part of your server
 You're going to need to do a little bit of work to get the request data. It's easy to think that we could grab the data from a property like request.body or something, but what if we were uploading entire files to this endpoint? The file would need to be sent in pieces or chunks, and so servers have to be built to get data in stages. 
 
