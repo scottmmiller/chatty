@@ -43,6 +43,8 @@ In the future with Express, this will be much easier. But for now, here are the 
 * If the request method is POST, add the message to your messages array, retrieving it from the request JSON body (see paragraph above). Make sure you end the response with a status, headers, and a body.
 * Test your server setup using Postman to add a new message via POST (make sure you use a "raw" request of type JSON)
 
+********************************************************8
+
 ###Step 3: Finish the Angular client
 To run your client side-by-side with your server, consider running the npm module `http-server`in the same directory. Whatever port it uses is what you'll be putting in your browser to test (e.g. localhost:8080). Remember, your API is running on a separate process on a separate port. This means that you'll have two seaprate "domains" you'll be hosting content from, a domain for your Node app (which responds to GET and POST) and `http-server` serving just static files (index.html, css, etc).
 

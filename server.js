@@ -2,7 +2,7 @@ var http = require('http');
 
 var port = 9999;
 
-var messages = ['this is a TEST'];
+var messages = [];
 
 var onRequest = function(req, res) {
 	if(req.method === "GET") {
@@ -15,10 +15,20 @@ var onRequest = function(req, res) {
 		console.log(messages)
 	}
 	if(req.method === "POST") {
-		res.writeHead(200, {
-			"Connection": 'close',
-			"Content-Type": 'application/json',
-			"Access-Control-Allow-Origin": '*'
+		var postData = '';
+		req.on('data', function(chunk) {
+			postData += chunk.toString();
+		})
+		req.on('end', function() {
+			console.log("Got POST");
+			console.log(JSON.parse(postData));
+			messages.push(JSON.parse(postData));
+			res.writeHead(200, {
+				"Connection": 'close',
+				"Content-Type": 'application/json',
+				"Access-Control-Allow-Origin": '*'
+			})
+			res.end(postData);
 		})
 	}
 
