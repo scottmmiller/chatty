@@ -5,6 +5,7 @@ var port = 9999;
 var messages = [];
 
 var onRequest = function(req, res) {
+	console.log(req.method)
 	if(req.method === "GET") {
 		res.writeHead(200, {
 			"Connection": 'close',
@@ -15,6 +16,7 @@ var onRequest = function(req, res) {
 		console.log(messages)
 	}
 	if(req.method === "POST") {
+		console.log("POST")
 		var postData = '';
 		req.on('data', function(chunk) {
 			postData += chunk.toString();
@@ -30,6 +32,16 @@ var onRequest = function(req, res) {
 			})
 			res.end(postData);
 		})
+	}
+	if(req.method === 'OPTIONS') {
+		res.writeHead(200, {
+			'Connection': 'close',
+			'Content-Type': 'application/json',
+			'Access-Control-Allow-Origin': '*',
+			'Access-Control-Allow-Methods': 'OPTIONS, GET, POST',
+			'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
+		});
+		res.end();
 	}
 
 };

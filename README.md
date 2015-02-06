@@ -61,7 +61,7 @@ MessageService.getMessages().then(function(response) {
 
 * Use the ng-repeat directive to create div elements for every message so that you can display the messages from the server
 
-***************************************************8
+***************************************************
 
 ###Step 4: User input
 * Create a text input field and attach an ng-model to it.
