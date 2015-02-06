@@ -9,24 +9,25 @@ var port = 9999;
 
 app.listen(port);
 
-app.get('/', function(req, res) {
-	res.type('application/json');
-	return res.json(messages);
-});
-
 app.use(bodyParser.json());
-
-app.post('/', function(req, res) {
-	messages.push(req.body);
-	console.log(messages);
-	res.json(messages);
-});
 
 app.use(function(req, res, next) {
 	res.header('Access-Control-Allow-Origin', '*');
 	res.header('Access-Control-Allow-Methods', 'OPTIONS, GET, POST');
 	res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
 	next();
+});
+
+app.get('/', function(req, res) {
+	res.type('application/json');
+	return res.json(messages);
+});
+
+
+app.post('/', function(req, res) {
+	messages.push(req.body);
+	console.log(messages);
+	res.json(messages);
 });
 
 
