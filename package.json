@@ -1,0 +1,29 @@
+{
+  "name": "chatty",
+  "version": "0.0.0",
+  "description": "chatty\r ======",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.11.0",
+    "express": "^4.11.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/scottmmiller/chatty.git"
+  },
+  "keywords": [
+    "chatty",
+    "express"
+  ],
+  "author": "Scott M",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/scottmmiller/chatty/issues"
+  },
+  "homepage": "https://github.com/scottmmiller/chatty"
+}

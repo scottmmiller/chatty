@@ -80,6 +80,8 @@ MessageService.getMessages().then(function(response) {
     * `'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'`
   * Now your POST requests should work from Chrome
 
+*********************************************************
+
 ###Step 5 (Black Diamond): Add timestamps
 * On the server, automatically add in a timestamp for each new message in your array.
 * On the client display the timestamp in the div.timestamp element in your ng-repeat
@@ -141,7 +143,7 @@ bodyParser is *middleware*, meaning it runs before every request. It automatical
 
 Your server.js might look something like this when it's done: https://gist.github.com/cahlan/7027611
 
-###Step 10: Refactor header writing into middlware
+###Step 10: Refactor header writing into middleware
 
 Let's create our own middleware to deal with headers.
 
